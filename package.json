@@ -4,7 +4,9 @@
   "description": "Small frontend for omdb API",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "webpack": "webpack",
+    "start": "webpack serve"
   },
   "repository": {
     "type": "git",
