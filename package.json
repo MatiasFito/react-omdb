@@ -1,0 +1,24 @@
+{
+  "name": "react-omdb",
+  "version": "0.1.0",
+  "description": "Small frontend for omdb API",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatiasFito/react-omdb.git"
+  },
+  "keywords": [
+    "React",
+    "Hooks",
+    "OMDB"
+  ],
+  "author": "Matias Fito",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/MatiasFito/react-omdb/issues"
+  },
+  "homepage": "https://github.com/MatiasFito/react-omdb#readme"
+}
