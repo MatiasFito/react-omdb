@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App test suit should render App component 1`] = `
+"<div>
+  <WithStyles(ForwardRef(Typography)) variant=\\"h2\\">
+    Hello World
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Typography)) variant=\\"subtitle1\\">
+    Welcome to OMDB
+  </WithStyles(ForwardRef(Typography))>
+</div>"
+`;
