@@ -42,6 +42,7 @@ module.exports = {
     }),
     new ESLintWebpackPlugin({
       fix: true,
+      files: path.join(__dirname, 'src'),
     }),
   ],
 };
