@@ -3,12 +3,10 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
 import {
-  BrowserRouter as Router, Route, Switch, Link,
+  BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
+import NavBar from '../NavBar';
 
 const App = () => {
   return (
@@ -27,16 +25,7 @@ const App = () => {
               </Typography>
             </Grid>
           </Grid>
-          <AppBar position="static">
-            <Toolbar>
-              <Button color="inherit" component={Link} to="/">
-                Most Popular
-              </Button>
-              <Button color="inherit" component={Link} to="/search">
-                Search
-              </Button>
-            </Toolbar>
-          </AppBar>
+          <NavBar />
           <Switch>
             <Route path="/" exact>
               Most Popular Content
