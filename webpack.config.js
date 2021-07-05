@@ -1,23 +1,31 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const publicFolder = 'public';
+const PATHS = {
+  src: path.join(__dirname, 'src'),
+  build: path.join(__dirname, 'build'),
+  public: path.join(__dirname, publicFolder),
+};
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'index.js'),
+  entry: `${PATHS.src}/index.js`,
   output: {
-    path: path.join(__dirname, 'build'),
+    path: `${PATHS.build}`,
     filename: 'index.bundle.js',
   },
   mode: process.env.NODE_ENV || 'development',
   resolve: {
     modules: [
-      path.resolve(__dirname, 'src'),
+      PATHS.src,
       'node_modules',
     ],
   },
   devServer: {
     port: 3000,
-    contentBase: path.join(__dirname, 'src'),
+    contentBase: PATHS.public,
   },
   module: {
     rules: [
@@ -43,6 +51,14 @@ module.exports = {
     new ESLintWebpackPlugin({
       fix: true,
       files: path.join(__dirname, 'src'),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: `${PATHS.public}`,
+          to: publicFolder,
+        },
+      ],
     }),
   ],
 };
