@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import {
+  useSelector,
+  useDispatch,
+} from 'react-redux';
+import mostPopularActions from '../../redux/MostPopular/actions';
+import mostPopularSelectors from '../../redux/MostPopular/selectors';
 
 const MostPopular = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(mostPopularActions.initMostPopular());
+  }, []);
+
+  const movies = useSelector(mostPopularSelectors.selectMovies);
+
+  const movieElements = movies.map((movie) => (
+    <div>
+      {movie.title}
+    </div>
+  ));
+
   return (
     <div>
-      Hello MostPopular Component
+      {movieElements}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import mostPopularReducer from './MostPopular/reducer';
 
 const rootReducer = combineReducers({
-  mostPopular: mostPopularReducer,
+  MostPopular: mostPopularReducer,
 });
 
 export default rootReducer;
