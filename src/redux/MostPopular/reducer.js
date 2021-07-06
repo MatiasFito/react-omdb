@@ -27,7 +27,7 @@ const mostPopularReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isInitializing: false,
-        movies: { ...action.payload.movies },
+        movies: [...action.payload.movies],
       };
 
     default:

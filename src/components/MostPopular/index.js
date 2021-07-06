@@ -16,7 +16,7 @@ const MostPopular = () => {
   const movies = useSelector(mostPopularSelectors.selectMovies);
 
   const movieElements = movies.map((movie) => (
-    <div>
+    <div key={movie.id}>
       {movie.title}
     </div>
   ));
