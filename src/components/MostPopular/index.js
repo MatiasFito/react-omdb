@@ -3,6 +3,8 @@ import {
   useSelector,
   useDispatch,
 } from 'react-redux';
+import Grid from '@material-ui/core/Grid';
+import MovieCard from '../MovieCard';
 import mostPopularActions from '../../redux/MostPopular/actions';
 import mostPopularSelectors from '../../redux/MostPopular/selectors';
 
@@ -16,15 +18,15 @@ const MostPopular = () => {
   const movies = useSelector(mostPopularSelectors.selectMovies);
 
   const movieElements = movies.map((movie) => (
-    <div key={movie.id}>
-      {movie.title}
-    </div>
+    <Grid item key={movie.id} xs={12} sm={6} md={4} lg={3}>
+      <MovieCard movie={movie} />
+    </Grid>
   ));
 
   return (
-    <div>
+    <Grid spacing={4} alignItems="center" container>
       {movieElements}
-    </div>
+    </Grid>
   );
 };
 
