@@ -1,5 +1,7 @@
+import utils from './utils';
+
 const mostPopularSelectors = {
-  selectMovies: ({ MostPopular }) => MostPopular.movies,
+  selectMovies: ({ MostPopular }) => utils.sortMoviesByRating(MostPopular.movies),
 };
 
 export default mostPopularSelectors;

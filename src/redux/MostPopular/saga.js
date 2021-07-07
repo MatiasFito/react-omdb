@@ -1,21 +1,24 @@
 import {
+  call,
   put,
   takeLatest,
-  delay,
 } from 'redux-saga/effects';
+import axios from 'axios';
 import mostPopularActions from './actions';
 import mostPopularTypes from './types';
+import utils from './utils';
 
 function* initMostPopular() {
   try {
-    yield delay(1500);
+    const {
+      data,
+    } = yield call(
+      axios.get,
+      '/mostPopular.json',
+      { responseType: 'json' },
+    );
 
-    const movies = [
-      {
-        id: 'tt0468569',
-        title: 'Test Movie',
-      },
-    ];
+    const movies = utils.mapMoviesResponse(data);
 
     yield put(mostPopularActions.initMostPopularSuccess(movies));
   } catch (e) {
